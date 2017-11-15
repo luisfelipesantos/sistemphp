@@ -1,0 +1,144 @@
+Instituto Federal de Educação, Ciência e Tecnologia do Tocantins
+Curso: Técnologo em Analise e Desenvolvimento de Sistemas - TADS
+Data: 13 de Novembro de 2017 
+Disciplina: Linguagem de Programação I - 2017.2
+Professor: Esp. Iury Gomes de Oliveira
+
+Trabalho Final da Disciplina de Linguagem de Programação 1
+
+
+Grupo 1 	     	Grupo 2 	        Grupo 3             Grupo 4
+Gutemberg               Ana Maria               Vinicius            Marcos Cassiano
+Wellyson		Antonio Flavio          Luis Felipe         Caio Felipe
+Juan Nascimento
+
+
+Grupo 5                 Grupo 6                 Grupo 7               Grupo 8
+Ari Amaral              Pedro Elpidio           Nayrton               Adila
+Raissa Uana             Lorena Aparecida	Dario                 Rafael
+Matheus Freitas         Juan Igor               Dayenne
+
+Grupo 9		
+Wilson 		
+Josivam
+
+Conteúdos trabalhados:
+
+09/08/2017	Aula inaugural, foi realizado a apresentação da disciplina: os conteúdos que serão abordados, formas de avaliação, das metodologias de ensino e apresentação do professor. Além disso, foi realizado uma dinâmica com os alunos	
+ 
+14/08/2017	Introdução a programação no PHP, uso de delimitadores de código no PHP e uso de variáveis	
+ 
+15/08/2017	Uso de constantes e operadores do PHP	
+ 
+16/08/2017	Uso de Estruturas de controle e estruturas de repetição no PHP	
+ 
+21/08/2017	Uso de funções de tratamento de string, criação e uso de funções personalizadas no PHP	
+ 
+22/08/2017	Gerenciamento de Vetores em PHP e desenvolvimento de 1 aplicação em sala de aula	
+ 
+23/08/2017	Realização de atividades de fixação	
+ 
+28/08/2017	Manipulação de arquivos e diretórios com PHP	
+ 
+29/08/2017	Realização de atividades de fixação	
+ 
+30/08/2017	Realização de atividades de fixação	
+ 
+04/09/2017	Funções nativas do PHP que extraem dados dos objetos	
+ 
+05/09/2017	Conceitos de classes e objetos, acesso aos dados do objetos	
+ 
+06/09/2017	Utilização de Métodos Mágicos com PHP. E clonagem de objetos com PHP	
+ 
+11/09/2017	Reutilização de Códigos com PHP	
+ 
+12/09/2017	Carregamento automático de Classes com PHP	
+ 
+13/09/2017	Realização de atividades de fixação	
+ 
+16/09/2017	Documentação de Classes no PHP	
+ 
+18/09/2017	Conceitos de Herança no PHP	
+ 
+19/09/2017	Usando Formulários no PHP	
+ 
+20/09/2017	Conceitos de Polimorfismo no PHP	
+ 
+25/09/2017	Estudo dos conceitos de classes abstratas no PHP	
+ 
+26/09/2017	Introdução ao diagrama de classes, aplicado ao sistemas com PHP	
+ 
+27/09/2017	Realização de atividades de fixação	
+ 
+02/10/2017	Criação de Objetos Genéricos no PHP	
+ 
+03/10/2017	Relacionamento de Objetos no PHP usando Associação	
+ 
+04/10/2017	Relacionamento de Objetos no PHP usando Agregação	
+ 
+09/10/2017	Relacionamento de Objetos no PHP usando Composição	
+ 
+10/10/2017	Conhecendo os níveis de erro no PHP, e personalizando os erros do PHP	
+ 
+11/10/2017	Atributos e Métodos Estáticos no PHP	
+ 
+16/10/2017	Realizando conexão com o Banco de Dados MySQL através do PHP	
+ 
+17/10/2017	Utilizando Prepared Statement no PHP para inserir dados no banco de Dados MySQL	
+ 
+18/10/2017	Utilizando Stored Procedure no PHP para realizar diversas inserções no Banco de Dados	
+ 
+23/10/2017	Metodologia CRUD de manipulação de Banco de Dados - CREATE	
+ 
+24/10/2017	Metodologia CRUD de manipulação de Banco de Dados - READ	
+ 
+25/10/2017	Metodologia CRUD de manipulação de Banco de Dados - UPDATE	
+ 
+30/10/2017	Metodologia CRUD de manipulação de Banco de Dados - DELETE	
+ 
+31/10/2017	Explicações sobre o trabalho final da disciplina	
+ 
+01/11/2017	Desenvolvimento de Classes que auxiliam no desenvolvimento de Sistemas: Validação de dados	
+ 
+06/11/2017	Desenvolvimento de Classes que auxiliam no desenvolvimento de Sistemas: Upload e Tratamento de Imagens	
+ 
+07/11/2017	Desenvolvimento de Classes que auxiliam no desenvolvimento de Sistemas: Upload e Tratamento de arquivos	
+ 
+08/11/2017	Desenvolvimento de Classes que auxiliam no desenvolvimento de Sistemas: Gestão de Uploads	
+ 
+13/11/2017	Desenvolvimento de Classes que auxiliam no desenvolvimento de Sistemas: Contagem de usuários online	
+ 
+14/11/2017	Desenvolvimento de Classes que auxiliam no desenvolvimento de Sistemas: Gestão de Estatisticas	
+ 
+15/11/2017	Desenvolvimento de Classes que auxiliam no desenvolvimento de Sistemas: Gestão de Usuários	
+ 
+20/11/2017	Introdução ao modelo MVC	
+ 
+21/11/2017	Conceitos Práticos de Utilização do MVC	
+ 
+22/11/2017	Conceitos Práticos de Utilização do MVC	
+ 
+27/11/2017	Introdução ao controle de versões com Git	
+ 
+28/11/2017	Controle de versões com Git	
+ 
+29/11/2017	O ciclo básico do Git	
+ 
+04/12/2017	Sincronização dos dados locais com o repositório remoto usando Git	
+ 
+05/12/2017	Organização do trabalho com branches no git	
+ 
+06/12/2017	Resolução de conflitos	
+ 
+11/12/2017	Boas práticas no uso do Git	
+ 
+12/12/2017	Controle avançado de alterações usando git	
+ 
+13/12/2017	Auxilio ao alunos no desenvolvimento final do trabalho da disciplina	
+ 
+18/12/2017	Auxilio ao alunos no desenvolvimento final do trabalho da disciplina	
+ 
+19/12/2017	Entrega do trabalho final da disciplina	
+ 
+20/12/2017	Entrega de notas e prova de recuperação	
+ 

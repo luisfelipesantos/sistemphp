@@ -1,0 +1,9 @@
+Versão 1.0 - 08/11/2017
+
+Criação do repositorio em branco no git hub
+
+Versão 2.0 - 13/11/2017
+
+Organização das pastas
+Criação das classes que utilizam o CRUD para manipular o Banco de Dados
+Criação a classe Validar() para auxiliar na manipulação e validação de dados do sistema
