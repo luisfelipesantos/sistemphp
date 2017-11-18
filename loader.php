@@ -1,17 +1,24 @@
-<!DOCTYPE html>
-<!-- Arquivo criado no curso de linguagem de programação I -->
-<!-- Curso: Análise e Desenvolvimento de Sistemas - TADS -->
+<?php
 
-<html lang="pt-br">
-    <head>
-        <meta charset="UTF-8">
-        <title></title>
-    </head>
-    <body>
-        <?php
-        
-        
-      
-        ?>
-    </body>
-</html>
+echo 'loader carregado <br>';
+
+// Inicia a sessão
+session_start();
+
+// Verifica o modo para debugar
+if (!defined('DEBUG') || DEBUG === false):
+
+    // Esconde todos os erros
+    error_reporting(0); 
+    ini_set("display_errors", 0);
+else:
+
+    // Mostra todos os erros
+    error_reporting(E_ALL);
+    ini_set("display_errors", 1);
+endif;
+
+// Funções globais
+require_once RAIZ . '/globais/funcoes.php';
+
+// Carrega a aplicação

@@ -1,17 +1,6 @@
-<!DOCTYPE html>
-<!-- Arquivo criado no curso de linguagem de programação I -->
-<!-- Curso: Análise e Desenvolvimento de Sistemas - TADS -->
+<!-- Carregando o arquivo de configurações globais -->
+<?php 
+echo 'index carregado <br>';
+require_once 'config.php';
+?>
 
-<html lang="pt-br">
-    <head>
-        <meta charset="UTF-8">
-        <title></title>
-    </head>
-    <body>
-        <?php
-        
-        
-      
-        ?>
-    </body>
-</html>
