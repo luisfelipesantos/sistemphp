@@ -5,3 +5,25 @@ Commit Inicial - Versão 0.1 do Sistema de Estoque
 Versão 0.2 - 17/11/2017
 
 Correção do Changelog
+
+Versão 0.3 - 18/11/2017
+
+Criação e organização da estrutura de pastas e arquivos iniciais do sistema de estoque
+
+1 - O usuário acessa o site;
+2 - O arquivo index.php apenas inclui o arquivo config.php;
+3 - O arquivo config.php é responsável por registrar configurações gerais e carregar o arquivo loader.php;
+4 - O arquivo loader.php irá carregar o arquivo globais.php, que é responsável por manter todas as funções globais. Como a autoload, para carregar classes automaticamente.
+5 - A Pasta controllers é responsável por armazenar os arquivos da camada controller
+6 - A Pasta model é responsável por armazenar os arquivos da camada model
+7 - A Pasta view é responsável por armazenar os arquivos da camada view
+8 - As pastas que têm um _sublinhado antes do nome, dentro da pasta view, são pastas que incluem arquivos que a camada view irá utilizar, mas que não são views.
+9 - O arquivo .htaccess é um arquivo de configuração do servidor Apache e serve para varias finalidade, por exemplo:
+    9.1 - Alterar configurações de acesso por diretório.
+    9.2 - Restringir acesso com ou sem senha;
+    9.3 - Bloquear arquivos ou diretórios;
+    9.4 - Redirecionamento para páginas de erro;
+    9.5 - URLs amigáveis;
+    9.6 - Cachear recursos da página;
+    9.7 - e etc;
+10 - A Pasta SQL vai armazenar os script sql do sistema
