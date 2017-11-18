@@ -1,9 +1,7 @@
-Versão 1.0 - 08/11/2017
+Versão 0.1 - 15/11/2017
 
-Criação do repositorio em branco no git hub
+Commit Inicial - Versão 0.1 do Sistema de Estoque
 
-Versão 2.0 - 13/11/2017
+Versão 0.2 - 17/11/2017
 
-Organização das pastas
-Criação das classes que utilizam o CRUD para manipular o Banco de Dados
-Criação a classe Validar() para auxiliar na manipulação e validação de dados do sistema
+Correção do Changelog
