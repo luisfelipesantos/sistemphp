@@ -38,4 +38,38 @@ Versão 0.4 - 18/11/2017
  4 - Inclusão do arquivo script sql do banco na respectiva pasta SQL
  5 - Criação da pasta _uploads dentro da pasta views
  6 - Programações iniciais do loader.php e carregar aplicação
- 7 - Programações das funções globais 
+ 7 - Programações iniciais das funções globais 
+
+Versão 0.5 - 28/11/2017
+
+    Mais programações iniciais do Minis Sistema de Estoque
+
+ 1 - Inclusão do arquivo model.php
+ 2 - Realizar programações no arquivo de funções globais
+ 3 - Agrupar classes em subpastas especificas de acordo com suas funções
+ 4 - Inclusão no arquivo config.php a configuração do nome da pasta classes
+ 5 - Alteração da lógica do __autoload para percorrer as subpastas
+ 6 - Criação da pasta documentação que armazena as documentações do projeto
+ 7 - Inclusão da pasta _js dentro da pasta view
+ 8 - Inclusão da pasta _include dentro da pasta view, armazena codigos comuns a várias paginas do sistema
+ 9 - Inclusão de logica para evitar que o usuario acesse diretamente os arquivos config.php e loader.php
+ 10 - Inclusão da imagem de acesso negado
+ 11 - Inclusão de pagina not found
+ 12 - Inclusão da view notfound
+ 13 - Criação da pasta controller dentro da pasta classes
+ 14 - Programação da classe AplicaçãoMVC (realizando)
+ 15 - Programação da classe HomeController (realizando)
+ 16 - Pasta sistemaphp/classes/controller armazena classes utilizadas pelo controller
+ 16 - Pasta sistemaphp/classes/model armazena classes utilizadas pelo model
+ 17 - Programação da classe PrincipalController (realizando)
+ 19 - Adição das bibliotecas do bootstrap
+ 20 - Exclusão da pasta de classes/banco
+
+Versão 0.6 - ?/11/2017
+
+ 1 - Programar classe categoria (realizando)
+ 2 - Programação da classe AplicaçãoMVC (realizando)
+ 3 - Programação da classe HomeController (realizando)
+ 4 - Programação da classe PrincipalController (realizando)
+
+        NÃO ESQUECER DE REVISAR TODA A DOCUMENTAÇÃO AO FINAL DA PROGRAMAÇÃO DO PROJETO

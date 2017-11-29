@@ -1,17 +1,18 @@
 <?php
 
 /**
- * @project: 5_Aulas_de_PHP
- * @name: ConexaoBD.class 
- * @Description: Exemplo de Conexão com Banco de Dados usando o Padrão Singleton
+ * @projeto: sistemaphp
+ * @nome: ConexaoBD.class 
+ * @descrição: Exemplo de Conexão com Banco de Dados usando o Padrão Singleton
  * Retorna um objeto PDO pelo método estático ObterConexao()
  * O Padrão de Projeto Singleton faz com que temos uma unica instancia de objeto
  * executando na memoria. Para maiores informações sobre acesso ao MySQL utilizando PDO
  * acesse: http://php.net/manual/pt_BR/ref.pdo-mysql.connection.php
  * @copyright (c) 17/10/2017, Iury Gomes - IFTO
- * @author Iury Gomes de Oliveira 
+ * @autor Iury Gomes de Oliveira 
  * @email iury.oliveira@ifto.edu.br
- * @version 1.0 
+ * @versão 1.0
+ * @metodos Conectar(), ObterConexao(), VerAtributos() 
  */
 class ConexaoBD {
 
@@ -101,12 +102,6 @@ class ConexaoBD {
         echo "CONEXAO: ";
         var_dump(self::$Conexao);
       
-    }
-
-    public function VerObjeto() {
-
-        var_dump($this);
-        echo '<hr>';
     }
 
 }

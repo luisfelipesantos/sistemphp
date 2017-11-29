@@ -1,17 +1,42 @@
 <?php
 
-// Evita que usuários acesse este arquivo diretamente
-echo 'globais carregado <br>';
+// Evitando que o usuário acesse o arquivo diretamente
+// redirecionando para index.php
+if (basename($_SERVER["PHP_SELF"]) == basename(__FILE__)):
+    exit("<script>window.location=('index.php')</script>");
+endif;
 
 // CARREGAMENTO AUTOMATICO DE CLASSES ##################################
+/**
+ * Função responsável pelo carregamento automatico de classes
+ * @param string $classe Armazena o nome da classe
+ */
 function __autoload($classe) {
 
-    if (file_exists("classes/" . $classe . ".class.php")):
-        require_once("classes/" . $classe . ".class.php");
-    else:
-        trigger_error("Erro ao incluir classes/" . $classe . ".class.php", E_USER_ERROR);
-        die; // Prevenindo o travamento do código
+    $diretorio = ['aplicacao', 'auxiliares','controller','model']; // Nomes dos diretorios
+    $inclusao = null; // Para verificar se a inclusao ocorreu
+
+    /**
+     * Explicação:
+     * Se arquivo existe e não é um diretorio então e um arquivo de classe
+     * tente realizar a inclusão caso contrario informe um erro
+     */
+    foreach ($diretorio as $nome):
+        
+        if (!$inclusao &&
+                file_exists(CLASSES . "/{$nome}/{$classe}.class.php") &&
+                !is_dir(CLASSES . "/{$nome}/{$classe}.class.php")):
+            include_once CLASSES . "/{$nome}/{$classe}.class.php";
+            $inclusao = true;
+        endif;
+
+    endforeach;
+
+    if(!$inclusao):
+        trigger_error("Não foi possível incluir a classe {$classe}.class.php ", E_USER_ERROR);
+        die;
     endif;
+
 }
 
 // Sucesso = Personaliza a exibição dos sucessos obtidos no sistema
@@ -74,3 +99,24 @@ function Erros($CodErro, $Mensagem, $arquivo, $Linha) {
 }
 
 set_error_handler('Erros');
+
+/**
+ * Verifica chaves de arrays
+ *
+ * Verifica se o Indice existe no Vettor e se ela tem algum valor.
+ * Obs.: Essa função está no escopo global, pois, será bem utilizada.
+ * @param array  $Vetor O array
+ * @param string $Indice   A chave do array
+ * @return string|null  O valor da chave do array ou nulo
+ */
+function VerificarVetor ( $Vetor, $Indice ) {
+    
+	// Verifica se a chave existe no array
+	if ( isset( $Vetor[ $Indice ] ) && ! empty( $Vetor[ $Indice ] ) ) {
+		// Retorna o valor da chave
+		return $Vetor[ $Indice ];
+	}
+	
+	// Retorna nulo por padrão
+	return null;
+}

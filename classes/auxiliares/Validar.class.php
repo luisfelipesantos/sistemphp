@@ -1,15 +1,15 @@
 <?php
 
 /**
- * @project: TADS_LingProg_I
- * @name: Validar.class 
- * @Description: Classe responsável por validar e manipular dados no sistema
+ * @projeto: sistemaphp
+ * @nome: Validar.class 
+ * @Descrição: Classe responsável por validar e manipular dados no sistema
  * @copyright (c) 13/11/2017, Iury Gomes - IFTO
- * @author Iury Gomes de Oliveira 
+ * @autor Iury Gomes de Oliveira 
  * @email iury.oliveira@ifto.edu.br
- * @version 1.0 - 13/11/2017
- * @Metodos Email(), Url(), UrlAmigavel(), TimeStamp(), QuantidadeVisitas()
- * @Metodos getDadosValidos(), getDadosInvalidos(), VerAtributos()
+ * @versao 1.0 - 13/11/2017
+ * @metodos Email(), Url(), UrlAmigavel(), TimeStamp(), QuantidadeVisitas()
+ * @metodos getDadosValidos(), getDadosInvalidos(), VerAtributos()
  */
 class Validar {
 

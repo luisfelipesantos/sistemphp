@@ -74,8 +74,6 @@ class Read extends ConexaoBD {
         
     }
 
-    
-    
     public function VerObjeto() {
 
         var_dump($this);
