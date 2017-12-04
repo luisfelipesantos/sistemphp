@@ -5,12 +5,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Controle de Estoque</title>
-    <link href="views/_css/bootstrap.min.css" rel="stylesheet">
-    <link href="views/_css/estilo.css" rel="stylesheet">
+    <link href="<?php echo BOOTSTRAP;?>" rel="stylesheet">
+    <link href="<?php echo ESTILO;?>" rel="stylesheet">
 </head>
 
 <body>
 
+    <?php // DEPURAÇÃO DE CODIGO
+$server = $_SERVER['SERVER_NAME'];
+
+$endereco = $_SERVER ['REQUEST_URI'];
+
+echo "http://" . $server . $endereco;
+//?>
+    
 <nav class="navbar navbar-inverse">
     <div class="container">
         <div class="navbar-header">
@@ -20,12 +28,12 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="index.php">Controle de Estoque</a>
+            <a class="navbar-brand" href="<?php echo VIEW_HOME;?>">Controle de Estoque</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
-                <li><a href="/pdo/categorias.php">Categorias</a></li>
-                <li><a href="/pdo/produtos.php">Produtos</a></li>
+                <li><a href="<?php echo VIEW_CATEGORIAS;?>">Categorias</a></li>
+                <li><a href="<?php echo VIEW_PRODUTOS;?>">Produtos</a></li>
             </ul>
         </div><!--/.navbar-collapse -->
     </div>

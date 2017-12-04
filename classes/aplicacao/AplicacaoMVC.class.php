@@ -58,8 +58,6 @@ class AplicacaoMVC {
         // Fim do __construct
     }
 
-
-
     /**
      * Obtém parâmetros de $_GET['path']
      *
@@ -71,56 +69,56 @@ class AplicacaoMVC {
      */
     public function ObterDadosURL() {
 
-        // Verifica se o parâmetro path foi enviado
-//        echo '<hr>ObterDadosURL';
-//        echo "<br>Capturando o valor de".'$_GET[\'path\']: '."{$_GET['path']}";
-        
+        // Verifica se o parâmetro path foi enviado        
         if (isset($_GET['path'])) {
 
+            echo '<hr>ObterDadosURL';
+            echo "<br>Capturando o valor de" . '$_GET[\'path\']: ' . "{$_GET['path']}";
+
             // Captura o valor de $_GET['path']
-//            $caminho = $_GET['path'];
-            
+            $caminho = $_GET['path'];
+
             // Retirando o / do final da string
-////            $caminho = rtrim($caminho, '/');
-//            
-//            echo '<br>Retirando o / do final da string: '."{$caminho}";         
-            
+            $caminho = rtrim($caminho, '/');
+
+            echo '<br>Retirando o / do final da string: ' . "{$caminho}";
+
             $caminho = filter_var($caminho, FILTER_SANITIZE_URL);
-            
-//            echo '<br>Removendo caracteres estranhos da URL: '."{$caminho}";
+
+            echo '<br>Removendo caracteres estranhos da URL: ' . "{$caminho}";
 
             // Cria um array de parâmetros
             $caminho = explode('/', $caminho);
 
-//            echo '<br>Array de parametros criado:';
-//            var_dump($caminho);
-            
+            echo '<br>Array de parametros criado:';
+            var_dump($caminho);
+
             // Configurando os atributos $controlador, $acao e $parametros
             $this->controlador = VerificarVetor($caminho, 0);
             $this->controlador .= '-controller'; // Esse formato de nome de controlador pode ser mudado
-            
-//            echo '<br>Obtendo o controlador: '."{$this->controlador}";
-            
+
+            echo '<br>Obtendo o controlador: ' . "{$this->controlador}";
+
             $this->acao = VerificarVetor($caminho, 1);
-            
-//            echo '<br>Obtendo a ação: '."{$this->acao}";
-            
+
+            echo '<br>Obtendo a ação: ' . "{$this->acao}";
+
             // Se houver parâmetros, então vamos configurar $parametros
-            if ( VerificarVetor($caminho, 2) ) {
+            if (VerificarVetor($caminho, 2)) {
                 unset($caminho[0]); // Destruindo posição 0 do vetor
                 unset($caminho[1]); // Desttuindo posição 1 do vetor
-
                 // Os parâmetros sempre virão após a ação
                 $this->parametros = array_values($caminho);
-               
-//                 echo '<br>Obtendo os parâmetros:';
-//                 var_dump($this->parametros);
-            }
 
+                echo '<br>Obtendo os parâmetros:';
+                var_dump($this->parametros);
+            }
         }
     }
+
     // Fim de ObterDadosURL
 }
+
 // Fim de AplicacaoMVC
 
 

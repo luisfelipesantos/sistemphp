@@ -9,6 +9,8 @@ require_once HEADER;
     </div>
 </div>
 
+
+
 <?php
-require_once FOOTER
+require_once FOOTER;
 ?>

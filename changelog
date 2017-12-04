@@ -65,11 +65,15 @@ Versão 0.5 - 28/11/2017
  19 - Adição das bibliotecas do bootstrap
  20 - Exclusão da pasta de classes/banco
 
-Versão 0.6 - ?/11/2017
+Versão 0.6 - 4/11/2017
 
  1 - Programar classe categoria (realizando)
  2 - Programação da classe AplicaçãoMVC (realizando)
  3 - Programação da classe HomeController (realizando)
  4 - Programação da classe PrincipalController (realizando)
+ 5 - Inclusão das Views Produto e Categorias
 
+Versão 0.7 - ?/11/2017
+
+ OBS.: 
         NÃO ESQUECER DE REVISAR TODA A DOCUMENTAÇÃO AO FINAL DA PROGRAMAÇÃO DO PROJETO

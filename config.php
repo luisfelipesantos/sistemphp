@@ -19,16 +19,13 @@ define( 'INCLUDES', RAIZ . '/views/_includes' ); // Caminho para a pasta de incl
 define( 'JS', RAIZ . '/views/_js' ); // Caminho para a pasta de javascript
 define( 'CLASSES', RAIZ . '/classes' ); // Caminho para a pasta de classes
 
-// CAMINHOS DE DIVERSAS VIEWS DO SISTEMA #################################################
-define('NOTFOUND', RAIZ . '/views/notfound/NotFound.php'); // Caminho para a view notfound
-define('HOME', RAIZ . '/views/home/Home.php'); // Caminho para a view Home
-define('FOOTER', INCLUDES. '/Footer.html'); // Caminho para o footer do template
-define('HEADER', INCLUDES. '/Header.html'); // Caminho para o header do template
-
-// CAMINHOS PARA ELEMENTOS UTILIZADOS PELAS VIEWS DO SISTEMA #############################
-define('BOOTSTRAP', CSS. '/bootstrap.min.css'); // Caminho para o bootstrap
-define('ESTILO', CSS. '/estilo.css'); // Caminho para o estilo da pagina
-define('ERROS', CSS. '/erros.css'); // Caminho para o estilo dos erros
+// CAMINHOS ABSOLUTO DE DIVERSAS PASTAS DO SISTEMA #################################################
+define('NOTFOUND', RAIZ . '/views/NotFound.php'); // Caminho para a view notfound
+define('HOME', RAIZ . '/views/Home.php'); // Caminho para a view Home
+define('CATEGORIAS', RAIZ . '/views/Categorias.php'); // Caminho para a view Categorias
+define('PRODUTOS', RAIZ . '/views/Produtos.php'); // Caminho para a view Produtos
+define('FOOTER', INCLUDES. '/Footer.php'); // Caminho para o footer do template
+define('HEADER', INCLUDES. '/Header.php'); // Caminho para o header do template
  
 // CONFIGURAÇÕES PARA CONEXÃO COM O BANCO DE DADOS ############################
 define('HOST', 'localhost');  // Local onde o banco de dados está armazenado
@@ -44,8 +41,16 @@ define('MSG_INFO', 'notice');
 define('MSG_ALERTA', 'warning');
 define('MSG_ERRO', 'error');
 
-// ENDEREÇO BASE DO SITE ##############################################
-define('BASE', 'http://sistemaphp.com.br');
+// LINKS DE DIVERSAR PAGINAS DO SISTEMA PARA SEREM UTILIZADOS PELAS VIEWS ###############
+define('BASE', 'http://sistemaphp.com.br/'); // Endereço base do sistema
+define('BOOTSTRAP', BASE. '/views/_css/bootstrap.min.css'); // Caminho para o bootstrap
+define('ESTILO', BASE . '/views/_css/estilo.css'); // Caminho para o estilo padrao da pagina
+define('ERROS', BASE. '/views/_css/erros.css'); // Caminho para o estilo dos erros
+define('VIEW_HOME', BASE. '/views/Home.php'); // Caminho para o view home
+define('VIEW_CATEGORIAS', BASE. '/views/Categoria.php'); // Caminho para o view home
+define('VIEW_PRODUTOS', BASE. '/views/Produtos.php'); // Caminho para o view home
+define('VIEW_NOTFOUND', BASE. '/views/NotFound.php'); // Caminho para o view home
+
 
 // Se você estiver desenvolvendo, modifique o valor para true
 define( 'DEBUG', true );

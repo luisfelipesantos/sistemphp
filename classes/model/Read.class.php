@@ -25,11 +25,12 @@ class Read extends ConexaoBD {
     /**
      * ExecutarRead: Executa uma leitura simplificada com Prepared Statments. Basta informar o nome da tabela,
      * os termos da seleção e os valores a serem lidos para executar.
-     * @param STRING $Tabela = Nome da tabela
-     * @param STRING $Termos = WHERE | ORDER | LIMIT :limit | OFFSET :offset
-     * @param STRING $Valores = Os valores que serão substituidos na string do sql
+     * @param STRING $Colunas Colunas a serem pesquisadas no banco
+     * @param STRING $Tabela Nome da tabela
+     * @param STRING $Termos WHERE | ORDER | LIMIT :limit | OFFSET :offset
+     * @param STRING $Valores Os valores que serão substituidos na string do sql
      */
-    public function ExecutarRead($Tabela, $Termos = null, $Valores = null) {
+    public function ExecutarRead($Colunas, $Tabela, $Termos = null, $Valores = null) {
 
          if (!empty($Valores)):
             // Coloca uma string em um array
@@ -37,7 +38,7 @@ class Read extends ConexaoBD {
         endif;
        
 
-        $this->Select = "SELECT * FROM {$Tabela} {$Termos}";
+        $this->Select = "SELECT {$Colunas} FROM {$Tabela} {$Termos}";
         $this->Executar();
     }
 
