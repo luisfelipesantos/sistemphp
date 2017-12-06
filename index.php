@@ -1,5 +1,6 @@
 <!-- Carregando o arquivo de configurações globais -->
-<?php 
+<?php
+
 require_once 'config.php';
 
 ?>

@@ -1,4 +1,4 @@
-<?php require_once 'cabecalho.php' ?>
+<?php require_once HEADER; ?>
 <div class="row">
     <div class="col-md-12">
         <h2>Produtos</h2>
@@ -39,4 +39,4 @@
         </table>
     </div>
 </div>
-<?php require_once 'rodape.php' ?>
+<?php require_once FOOTER; ?>

@@ -1,7 +1,7 @@
 
 <?php
-$categoria = new Categorias();
-$lista = $categoria->Listar('id, nome', 'categoria');
+//$categoria = new Categorias();
+$lista; //= $categoria->Listar('id, nome', 'categoria');
 
 require_once HEADER;
 ?>

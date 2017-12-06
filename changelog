@@ -75,5 +75,18 @@ Versão 0.6 - 4/11/2017
 
 Versão 0.7 - ?/11/2017
 
- OBS.: 
+ 1 - Mudanças radicais no desenvolvimento do projeto.
+
+    O objetivo deste trabalho é ensinar de forma simples o conceito de MVC e ao mesmo tempo utilizando as informações repassadas aos 
+    alunos durante o curso de PHP que foi ministrado ao longo do semestre. Criar Uma aplicação usando arquitetura MVC, CRUD e Orientação
+    a objetos no PHP sem uso de frameworks PHP prontos
+
+    Os diretórios que serão utilizados por este projeto, foram simplificados a fim de ajudar o aluno a se concentrar nos objetivos das classes.
+    Em uma aplicação no mundo real, há uma quantidade muito maior de pastas. Todavia, se neste projeto, fossemos entrar nestes detalhes,
+    talvez tornaria o procedimento mais complexo para o momento. Talvez, para quem já teve contato com frameworks completos,
+    como por exemplo Laravel, não concodará com a simplificada divisão de pastas seguintes. Mas, o conteúdo é apenas didático.
+    O trabalho é didático para os que os alunos alcançem um nível maior de desenvolvimento, um passo de cada vez.
+
+ 2 - 3 telas principais do sistema adicionadas
+
         NÃO ESQUECER DE REVISAR TODA A DOCUMENTAÇÃO AO FINAL DA PROGRAMAÇÃO DO PROJETO
