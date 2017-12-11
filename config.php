@@ -11,7 +11,7 @@ session_start();
 /**
  * Configurações gerais do sistema
  */
-// CAMINHOS PARA ACESSO A DIVERSAS PASTAS DO SISTEMA ###################################
+// MONTAGEM DE CAMINHOS ABSOLUTO PARA DIVERSAS PASTAS DO SISTEMA ###################################
 define('RAIZ', __DIR__); // Obter o caminho da raiz do sistema
 define('CLASSES', RAIZ . '/classes'); // Caminho para a pasta de classes
 define('VIEW', CLASSES . '/view'); // Caminho para a pasta de views do sistema
@@ -29,10 +29,10 @@ define('BOOTSTRAP', 'http://localhost/sistemaphp/classes/view/_css/bootstrap.min
 define('ESTILO', 'http://localhost/sistemaphp/classes/view/_css/estilo.css'); // Caminho para o estilo padrao da pagina
 define('ERROS', 'http://localhost/sistemaphp/classes/view/_css/erros.css'); // Caminho para o estilo dos erros
 define('LINK_HOME', 'http://localhost/sistemaphp/index.php?controller=home'); // Link para controller carregar home
-define('LINK_CATEGORIAS', 'http://localhost/sistemaphp/index.php?controller=categorias'); // Link para controller carregar categorias
-define('LINK_PRODUTOS', 'http://localhost/sistemaphp/index.php?controller=produtos'); // Link para controller carregar produtos
+define('LINK_CATEGORIAS', 'http://localhost/sistemaphp/index.php?controller=categorias&acao=listar'); // Link para controller carregar categorias
+define('LINK_PRODUTOS', 'http://localhost/sistemaphp/index.php?controller=produtos&acao=listar'); // Link para controller carregar produtos
 
-// CAMINHOS PARA USO EM REQUIRE_ONCE  ################################################
+// CAMINHOS PARA DIVERSAS PASTAS DO SISTEMAS  ################################################
 define('VIEW_HOME', VIEW . '/Home.php'); // Caminho para o view home
 define('VIEW_CATEGORIAS', VIEW . '/Categorias.php'); // Caminho para o view categorias
 define('VIEW_PRODUTOS', VIEW . '/Produtos.php'); // Caminho para o view produtos

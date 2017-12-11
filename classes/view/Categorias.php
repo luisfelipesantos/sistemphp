@@ -1,8 +1,6 @@
 
 <?php
-//$categoria = new Categorias();
-$lista; //= $categoria->Listar('id, nome', 'categoria');
-
+$lista = $_SESSION['lista'];
 require_once HEADER;
 ?>
 <div class="row">

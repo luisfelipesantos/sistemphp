@@ -9,7 +9,6 @@ class Categorias extends Read {
     {
         $this->ExecutarRead('id, nome', 'categorias');
         $lista = $this->getResultado();
-        var_dump($lista);
         return $lista;
     }
 }
