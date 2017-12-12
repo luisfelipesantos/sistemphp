@@ -58,21 +58,15 @@ function Sucesso($Mensagem, $arquivo) {
 
 // Carrega a aplicação
 $Aplicacao = new Controller($_GET);
-$URL = $Aplicacao->AnalisarURL();
-$Aplicacao->ChamarView();
+$Aplicacao->ProcessarRequisicao();
 
-
-
-
-if (defined('DEBUG') && DEBUG === true):
+if ( defined('DEBUG') && DEBUG === true):
 
     echo '<hr>';
     echo '<center>var_dump da aplicação</center>';
     echo '<center>Exibido apenas durante o desenvolvimento</center>';
     echo 'CONTROLLER:';
     var_dump($Aplicacao);
-    echo 'URL:';
-    var_dump($URL);
     echo '<hr>';
 
 endif;

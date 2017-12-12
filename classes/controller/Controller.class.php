@@ -17,10 +17,11 @@ class Controller {
     // acao = Receberá o valor da ação contido na URL: exemplo.com?controller=home&acao=valor
     // parametro = Receberá o valor de algum parêmtro contido na URL: exemplo.com?controller=home&acao=valor&param=valor    
     private $URL = array();
+    private $Categorias; // Objeto da classe categorias
 
     public function __construct(array $GET) {
 
-
+        $this->Categorias = new Categorias();
 
         if (!empty($GET['controller'])):
 
@@ -43,91 +44,88 @@ class Controller {
         endif;
     }
 
-    public function AnalisarURL() {
+    public function ProcessarRequisicao() {
 
         // Para o caso da primeira execução do sistema
         if (empty($this->URL['controller'])):
             $this->URL['controller'] = 'home';
-            $this->URL['acao'] = VIEW_HOME;
-            $this->URL['parametros'] = null;
+            $this->URL['acao'] = 'exibir view home';
+            $this->URL['parametros'] = 'sem parametros';
+            require_once VIEW_HOME;
             return $this->URL;
         endif;
 
-        // Para o caso do usuario clicar no link CONTROLE DE ESTOQUE no menu principal
-        if (( $this->URL['controller'] == 'home') && ($this->URL['acao'] == null)):
-            $this->URL['controller'] = 'home';
-            $this->URL['acao'] = VIEW_HOME;
-            $this->URL['parametros'] = null;
-            return $this->URL;
+        // HOME ################################################################################
+        if ($this->URL['controller'] == 'home'):
 
-        endif;
+            // Executa este if se o usuario clikar no link CONTROLE DE ESTOQUE no menu principal
+            if ($this->URL['acao'] == null):
 
-        // Para o caso do usuario clicar no link CATEGORIAS no menu principal
-        if (( $this->URL['controller'] == 'categorias') && ($this->URL['acao'] == 'listar')):
-            
-            // EXECUTANDO MODEL
-            $Categoria = new Categorias();
-            $_SESSION['lista'] = $Categoria->Listar('id, nome', 'categoria');
-            // FIM DE EXECUÇÃO DO MODEL
-
-            $this->URL['parametros'] = null;
-            return $this->URL;
-
-        endif;
-        
-        // Para o caso do usuario clicar no link PRODUTOS no menu principal
-        if (( $this->URL['controller'] == 'produtos') && ($this->URL['acao'] == 'listar')):
-            
-            // EXECUTANDO MODEL
-            //$Categoria = new Categorias();
-            //$_SESSION['lista'] = $Categoria->Listar('id, nome', 'categoria');
-            // FIM DE EXECUÇÃO DO MODEL
-
-            $this->URL['parametros'] = null;
-            return $this->URL;
-
-        endif;
-    }
-
-    public function ChamarView() {
-
-
-        if (( $this->URL['controller'] == 'home')):
-
-            // Executa este if na primeira execução
-            // Executa este if se o usuario clikar no link CONTROLE DE ESTOQUE no meu principal
-            if (($this->URL['acao'] == VIEW_HOME)):
-
+                $this->URL['controller'] = 'home';
+                $this->URL['acao'] = 'exibir view home';
+                $this->URL['parametros'] = 'sem parametros';
                 require_once VIEW_HOME;
+                return $this->URL;
 
             endif;
 
         endif;
+        // FIM HOME ################################################################################
+        // 
+        // 
+        // CATEGORIAS ########################################################################
+        if ($this->URL['controller'] == 'categorias'):
 
-        
-        if (( $this->URL['controller'] == 'categorias')):
+            // LISTAR CATEGORIAS -------------------------------------------------------------
+            // Quando o usuario clicar no link CATEGORIAS no menu principal, ja lista direto
+            if ($this->URL['acao'] == 'listar'):
 
-            // Executa este if se o usuario clikar no link CATEGORIAS no menu principal
-            if (($this->URL['acao'] == 'listar')):
+                // EXECUTANDO MODEL 
+                $_SESSION['lista'] = $this->Categorias->Listar('id, nome', 'categoria');
+                // FIM DE EXECUÇÃO DO MODEL 
 
                 require_once VIEW_CATEGORIAS;
 
+                $this->URL['parametros'] = null;
+                return $this->URL;
             endif;
 
+            // CRIAR CATEGORIAS -------------------------------------------------------------
+
+            if ($this->URL['acao'] == 'criar'):
+
+                // Quando o usuario clica no botão CRIAR NOVA CATEGORIA no menu principal
+                if ($this->URL['parametros'] == null):
+                    require_once VIEW_CATEGORIAS_CRIAR;
+                    return $this->URL;
+                endif;
+
+//                // Quando o usuario envia uma nova categoria para ser criada
+//                if (empty($this->URL['parametros'])):
+//                    // $Dados = ['nome' => 'nome do formulario'];
+//                    $this->Categorias->Inserir('categorias', $Dados);
+//                endif;
+
+            endif;
+
+
         endif;
-        
-        
+        // FIM CATEGORIAS ########################################################################
+        // 
+        //
+        // PRODUTOS ########################################################################   
         if (( $this->URL['controller'] == 'produtos')):
 
-            // Executa este if se o usuario clikar no link PRODUTOS no menu principal
-            if (($this->URL['acao'] == 'listar')):
+            // Quando o usuario clicar no link PRODUTOS no menu principal
+            if ($this->URL['acao'] == 'listar'):
 
                 require_once VIEW_PRODUTOS;
 
+                $this->URL['parametros'] = null;
+                return $this->URL;
             endif;
-
         endif;
-
+        // FIM PRODUTOS ######################################################################## 
     }
 
 }

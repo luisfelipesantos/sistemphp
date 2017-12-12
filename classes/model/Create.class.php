@@ -20,7 +20,7 @@ class Create extends ConexaoBD {
     private $sql_preparado; // Objeto PDOStatement, responsável pela query preparada
 
     /** @var PDO */
-    private $Conexao; // Objeto PDO, responsáve por armazenar a conexão com o banco de dados
+    private $Conexao; // Objeto PDO, responsável por armazenar a conexão com o banco de dados
 
     /**
      * ExeCreate: Executa um cadastro simplificado no banco de dados utilizando prepared statements.

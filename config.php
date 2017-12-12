@@ -30,11 +30,13 @@ define('ESTILO', 'http://localhost/sistemaphp/classes/view/_css/estilo.css'); //
 define('ERROS', 'http://localhost/sistemaphp/classes/view/_css/erros.css'); // Caminho para o estilo dos erros
 define('LINK_HOME', 'http://localhost/sistemaphp/index.php?controller=home'); // Link para controller carregar home
 define('LINK_CATEGORIAS', 'http://localhost/sistemaphp/index.php?controller=categorias&acao=listar'); // Link para controller carregar categorias
+define('LINK_CATEGORIAS_CRIAR', 'http://localhost/sistemaphp/index.php?controller=categorias&acao=criar'); // Link para controller carregar criação de categorias
 define('LINK_PRODUTOS', 'http://localhost/sistemaphp/index.php?controller=produtos&acao=listar'); // Link para controller carregar produtos
 
-// CAMINHOS PARA DIVERSAS PASTAS DO SISTEMAS  ################################################
+// CAMINHOS PARA DIVERSAS VIEW DO SISTEMAS  ################################################
 define('VIEW_HOME', VIEW . '/Home.php'); // Caminho para o view home
 define('VIEW_CATEGORIAS', VIEW . '/Categorias.php'); // Caminho para o view categorias
+define('VIEW_CATEGORIAS_CRIAR', VIEW . '/CategoriasCriar.php'); // Caminho para o view Criação de Categorias
 define('VIEW_PRODUTOS', VIEW . '/Produtos.php'); // Caminho para o view produtos
 define('VIEW_NOTFOUND', VIEW . '/NotFound.php'); // Caminho para o view Notfound
 define('VIEW_ERROS', VIEW . '/Erros.php'); // Caminho para o view Erros
