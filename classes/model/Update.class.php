@@ -31,11 +31,11 @@ class Update extends ConexaoBD {
      * @param STRING $Parametros = WHERE coluna = :link AND.. OR..
      * @param STRING $Valores = Valores que serão substituidos na string da sql
      */
-    public function ExecutarUpdate($Tabela, array $Dados, $Parametros, $Valores) {
+    public function ExecutarUpdate( string $Tabela, array $Dados, string $Parametros, $Valores) {
 
-        $this->Tabela = (string) $Tabela;
+        $this->Tabela = $Tabela;
         $this->Dados = $Dados;
-        $this->Parametros = (string) $Parametros;
+        $this->Parametros = $Parametros;
 
         $this->AlterarValores($Valores);
 
@@ -94,13 +94,15 @@ class Update extends ConexaoBD {
             $strings[] = $Indices . ' = :' . $Indices;
         endforeach;
 
-        var_dump($strings); // Para Fins de depuração apenas
+        //var_dump($strings); // Para Fins de depuração apenas
        
         // Separar por virgulas as strings
         $strings = implode(', ', $strings);
 
-        var_dump($strings); // Para Fins de depuração apenas
+        //var_dump($strings); // Para Fins de depuração apenas
         $this->sql_preparado = "UPDATE {$this->Tabela} SET {$strings} {$this->Parametros}";
+        
+        //var_dump($this->sql_preparado);
     
     }
 

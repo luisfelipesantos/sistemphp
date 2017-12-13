@@ -23,51 +23,27 @@ class Controller {
 
         $this->Categorias = new Categorias();
 
-        if (!empty($GET['controller'])):
+        if (empty($GET)):
 
-            $this->URL['controller'] = $GET['controller'];
-        else:
             $this->URL['controller'] = null;
-        endif;
-
-
-        if (!empty($GET['acao'])):
-            $this->URL['acao'] = $GET['acao'];
-        else:
             $this->URL['acao'] = null;
-        endif;
+            $this->URL['id'] = null;
 
-        if (!empty($GET['param'])):
-            $this->URL['parametros'] = $GET['param'];
         else:
-            $this->URL['parametros'] = null;
+            $this->URL = $GET;
         endif;
     }
 
-    public function ProcessarRequisicao() {
-
-        // Para o caso da primeira execução do sistema
-        if (empty($this->URL['controller'])):
-            $this->URL['controller'] = 'home';
-            $this->URL['acao'] = 'exibir view home';
-            $this->URL['parametros'] = 'sem parametros';
-            require_once VIEW_HOME;
-            return $this->URL;
-        endif;
+    public function ProcessarRequisicao(array $POST) {
 
         // HOME ################################################################################
-        if ($this->URL['controller'] == 'home'):
+        // Para o caso da primeira execução do sistema
+        // ou
+        // Se o usuario clicar no link CONTROLE DE ESTOQUE no menu principal
+        if (($this->URL['controller'] == 'home') || ( empty($this->URL['controller']) )):
 
-            // Executa este if se o usuario clikar no link CONTROLE DE ESTOQUE no menu principal
-            if ($this->URL['acao'] == null):
-
-                $this->URL['controller'] = 'home';
-                $this->URL['acao'] = 'exibir view home';
-                $this->URL['parametros'] = 'sem parametros';
-                require_once VIEW_HOME;
-                return $this->URL;
-
-            endif;
+            $this->ExibirHome();
+            return $this->URL;
 
         endif;
         // FIM HOME ################################################################################
@@ -76,37 +52,58 @@ class Controller {
         // CATEGORIAS ########################################################################
         if ($this->URL['controller'] == 'categorias'):
 
-            // LISTAR CATEGORIAS -------------------------------------------------------------
+            // EXIBIR VIEW CATEGORIAS -------------------------------------------------------------
             // Quando o usuario clicar no link CATEGORIAS no menu principal, ja lista direto
             if ($this->URL['acao'] == 'listar'):
 
-                // EXECUTANDO MODEL 
-                $_SESSION['lista'] = $this->Categorias->Listar('id, nome', 'categoria');
-                // FIM DE EXECUÇÃO DO MODEL 
-
-                require_once VIEW_CATEGORIAS;
-
-                $this->URL['parametros'] = null;
+                $this->ObterCategorias("id, nome", "categorias");
+                $this->ExibirCategorias();
                 return $this->URL;
+
             endif;
 
-            // CRIAR CATEGORIAS -------------------------------------------------------------
+            // EXIBIR VIEW NOVAS CATEGORIAS -------------------------------------------------------------
+            // Quando o usuario clica no botão CRIAR NOVA CATEGORIA no menu categorias
+            if ($this->URL['acao'] == 'inserir'):
 
-            if ($this->URL['acao'] == 'criar'):
+                require_once VIEW_CATEGORIAS_INSERIR;
+                return $this->URL;
 
-                // Quando o usuario clica no botão CRIAR NOVA CATEGORIA no menu principal
-                if ($this->URL['parametros'] == null):
-                    require_once VIEW_CATEGORIAS_CRIAR;
-                    return $this->URL;
+            endif;
+
+            // INSERIR CATEGORIAS -------------------------------------------------------------
+            if ($this->URL['acao'] == 'inserido'):
+
+                if (!empty($this->URL['id'])):
+
+                    // $update->ExecutarUpdate('siteviews_agent', $Dados, "WHERE agent_id = :id", 'id=15');
+                    // Quando o usuario clica no botão SALVAR de EDITAR CATEGORIA
+                    $Dados = ['nome' => $POST['nome']];
+                    $this->AtualizarCategorias('categorias', $Dados, "WHERE id = :id", "id={$this->URL['id']}");
+                  
+                else:
+
+                    // Quando o usuario clica no botão SALVAR de NOVA CATEGORIA    
+                    $this->InserirCategorias($POST);
+
                 endif;
-
-//                // Quando o usuario envia uma nova categoria para ser criada
-//                if (empty($this->URL['parametros'])):
-//                    // $Dados = ['nome' => 'nome do formulario'];
-//                    $this->Categorias->Inserir('categorias', $Dados);
-//                endif;
+                
+                $this->ObterCategorias("id, nome", "categorias");
+                $this->ExibirCategorias();
+                return $this->URL;
 
             endif;
+
+            // EXIBIR VIEW EDITAR CATEGORIAS -------------------------------------------------------------
+            // Quando o usuario clica no botão EDITAR na VIEW_CATEGORIAS
+            if ($this->URL['acao'] == 'editar'):
+
+                $this->ObterCategorias("id, nome", 'categorias', 'WHERE id = :id', "id={$this->URL['id']}");
+                require_once VIEW_CATEGORIAS_EDITAR;
+                return $this->URL;
+
+            endif;
+
 
 
         endif;
@@ -119,13 +116,52 @@ class Controller {
             // Quando o usuario clicar no link PRODUTOS no menu principal
             if ($this->URL['acao'] == 'listar'):
 
-                require_once VIEW_PRODUTOS;
-
-                $this->URL['parametros'] = null;
+                $this->ExibirProdutos();
                 return $this->URL;
+
             endif;
         endif;
         // FIM PRODUTOS ######################################################################## 
+    }
+
+    // FIM PROCESSAR REQUISIÇÃO ################################################################
+
+    private function AtualizarCategorias(string $Tabela, array $Dados, string $Parametros, $Valores) {
+
+        $this->Categorias->Atualizar($Tabela, $Dados, $Parametros, $Valores);
+    }
+
+    private function InserirCategorias(array $POST, $Tabela) {
+
+        $Dados = ['nome' => $POST['nome']];
+
+        // EXECUTANDO MODEL 
+        $this->Categorias->Inserir($Tabela, $Dados);
+        // FIM DE EXECUÇÃO DO MODEL 
+    }
+
+    private function ObterCategorias(string $Colunas, string $Tabela, string $Termos = null, string $Valores = null) {
+
+        // EXECUTANDO MODEL 
+        $_SESSION['resultado'] = $this->Categorias->Buscar($Colunas, $Tabela, $Termos, $Valores);
+        // FIM DE EXECUÇÃO DO MODEL 
+    }
+
+    private function ExibirHome() {
+
+        $this->URL['controller'] = 'home';
+        $this->URL['acao'] = 'exibir view home';
+        require_once VIEW_HOME;
+    }
+
+    private function ExibirCategorias() {
+
+        require_once VIEW_CATEGORIAS;
+    }
+
+    private function ExibirProdutos() {
+
+        require_once VIEW_PRODUTOS;
     }
 
 }

@@ -1,6 +1,6 @@
 
 <?php
-$lista = $_SESSION['lista'];
+$lista = $_SESSION['resultado'];
 require_once HEADER;
 ?>
 <div class="row">
@@ -11,7 +11,7 @@ require_once HEADER;
 
 <div class="row">
     <div class="col-md-4">
-        <a href="<?php echo LINK_CATEGORIAS_CRIAR;?>" class="btn btn-info btn-block">Criar Nova Categoria</a>
+        <a href="<?php echo LINK_CATEGORIAS_NOVA;?>" class="btn btn-info btn-block">Criar Nova Categoria</a>
     </div>
 </div>
 
@@ -29,10 +29,10 @@ require_once HEADER;
             <tbody>
                 <?php foreach ($lista as $linha): ?>
                     <tr>
-                        <td><a href="/categorias-detalhe.php" class="btn btn-link"><?php echo $linha['id'] ?></a></td>
-                        <td><a href="/categorias-detalhe.php" class="btn btn-link"><?php echo $linha['nome'] ?></a></td>
-                        <td><a href="/categorias-editar.php?id=<?php echo $linha['id'] ?>" class="btn btn-info">Editar</a></td>
-                        <td><a href="/categorias-excluir-post.php?id=<?php echo $linha['id'] ?>" class="btn btn-danger">Excluir</a></td>
+                        <td><a href="/categorias-detalhe.php" class="btn btn-link"><?php echo $linha['id']; ?></a></td>
+                        <td><a href="/categorias-detalhe.php" class="btn btn-link"><?php echo $linha['nome']; ?></a></td>
+                        <td><a href="<?php echo LINK_CATEGORIAS_EDITAR.$linha['id']; ?>" class="btn btn-info">Editar</a></td>
+                        <td><a href="/categorias-excluir-post.php?id=<?php echo $linha['id']; ?>" class="btn btn-danger">Excluir</a></td>
                     </tr>
                 <?php endforeach; ?>
             </tbody>

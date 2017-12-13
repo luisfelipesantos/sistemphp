@@ -22,9 +22,9 @@ class Categorias {
         $this->delete = new Delete();
     }
 
-    public function Listar(string $Colunas, string $Tabela, string $Termos = null, string $Valores = null)
+    public function Buscar(string $Colunas, string $Tabela, string $Termos = null, string $Valores = null)
     {
-        $this->read->ExecutarRead('id, nome', 'categorias');
+        $this->read->ExecutarRead($Colunas, $Tabela, $Termos, $Valores);
         $lista = $this->read->getResultado();
         return $lista;
     }
@@ -33,7 +33,14 @@ class Categorias {
     {
        
         $this->create->ExecutarCreate($Tabela, $Dados);
-        $lista = $this->read->getResultado();
+        $lista = $this->create->getResultado;
+        return $lista;
+    }
+    
+    public function Atualizar( string $Tabela, array $Dados, string $Parametros, $Valores){
+        
+        $this->update->ExecutarUpdate($Tabela, $Dados, $Parametros, $Valores);
+        $lista = $this->update->getResultado();
         return $lista;
     }
 }

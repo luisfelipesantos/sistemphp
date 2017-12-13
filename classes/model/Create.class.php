@@ -70,10 +70,8 @@ class Create extends ConexaoBD {
         // $colunas: são as colunas do vetor
         // $valores: valores a serem substituidos no vetor
         $colunas = implode(', ', array_keys($this->Dados));
-        var_dump($colunas);
         
         $valores = ':' . implode(', :', array_keys($this->Dados));
-        var_dump($valores);
         
         $this->sql_preparado = "INSERT INTO {$this->Tabela} ({$colunas}) VALUES ({$valores})";
     }

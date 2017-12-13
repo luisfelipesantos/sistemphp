@@ -56,11 +56,16 @@ function Sucesso($Mensagem, $arquivo) {
     echo "<small>Caminho do Arquivo: {$arquivo}</small></p>";
 }
 
+
+//if ( ! empty($_POST) ):
+//    $_SESSION['POST'] = $_POST;
+//endif;
+
 // Carrega a aplicação
 $Aplicacao = new Controller($_GET);
-$Aplicacao->ProcessarRequisicao();
+$Aplicacao->ProcessarRequisicao($_POST);
 
-if ( defined('DEBUG') && DEBUG === true):
+if (defined('DEBUG') && DEBUG === true):
 
     echo '<hr>';
     echo '<center>var_dump da aplicação</center>';

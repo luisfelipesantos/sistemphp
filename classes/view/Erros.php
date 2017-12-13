@@ -7,7 +7,7 @@ require_once HEADER;
 
         <?php
         
-        //session_start();
+        
         switch ($_SESSION['CodErro']):
             case E_USER_NOTICE:
                 $CssClass = MSG_INFO;

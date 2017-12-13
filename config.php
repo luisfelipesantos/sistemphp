@@ -25,18 +25,22 @@ define('JS', VIEW . '/_js'); // Caminho para a pasta de javascript
 
 // LINKS PARA REDIRECIONAMENTO DE USUARIOS ################################################
 define('BASE', 'http://localhost/sistemaphp/index.php' );
+define('BASE2', 'http://localhost/sistemaphp/index.php?controller=categorias&acao=criar' );
 define('BOOTSTRAP', 'http://localhost/sistemaphp/classes/view/_css/bootstrap.min.css'); // Caminho para o bootstrap
 define('ESTILO', 'http://localhost/sistemaphp/classes/view/_css/estilo.css'); // Caminho para o estilo padrao da pagina
 define('ERROS', 'http://localhost/sistemaphp/classes/view/_css/erros.css'); // Caminho para o estilo dos erros
 define('LINK_HOME', 'http://localhost/sistemaphp/index.php?controller=home'); // Link para controller carregar home
 define('LINK_CATEGORIAS', 'http://localhost/sistemaphp/index.php?controller=categorias&acao=listar'); // Link para controller carregar categorias
-define('LINK_CATEGORIAS_CRIAR', 'http://localhost/sistemaphp/index.php?controller=categorias&acao=criar'); // Link para controller carregar criação de categorias
+define('LINK_CATEGORIAS_NOVA', 'http://localhost/sistemaphp/index.php?controller=categorias&acao=inserir'); // Link para controller carregar view de novas categorias
+define('LINK_CATEGORIAS_INSERIDO', 'http://localhost/sistemaphp/index.php?controller=categorias&acao=inserido'); // Link para controller processar inserção de categorias
+define('LINK_CATEGORIAS_EDITAR', 'http://localhost/sistemaphp/index.php?controller=categorias&acao=editar&id='); // Link para controller processar categoria editada
 define('LINK_PRODUTOS', 'http://localhost/sistemaphp/index.php?controller=produtos&acao=listar'); // Link para controller carregar produtos
 
 // CAMINHOS PARA DIVERSAS VIEW DO SISTEMAS  ################################################
 define('VIEW_HOME', VIEW . '/Home.php'); // Caminho para o view home
 define('VIEW_CATEGORIAS', VIEW . '/Categorias.php'); // Caminho para o view categorias
-define('VIEW_CATEGORIAS_CRIAR', VIEW . '/CategoriasCriar.php'); // Caminho para o view Criação de Categorias
+define('VIEW_CATEGORIAS_INSERIR', VIEW . '/CategoriasInserir.php'); // Caminho para o view Inserir de Categorias
+define('VIEW_CATEGORIAS_EDITAR', VIEW . '/CategoriasEditar.php'); // Caminho para o view Edição de Categorias
 define('VIEW_PRODUTOS', VIEW . '/Produtos.php'); // Caminho para o view produtos
 define('VIEW_NOTFOUND', VIEW . '/NotFound.php'); // Caminho para o view Notfound
 define('VIEW_ERROS', VIEW . '/Erros.php'); // Caminho para o view Erros
